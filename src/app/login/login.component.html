@@ -50,8 +50,8 @@
           <div
             class="text-red-400 p-2"
             *ngIf="password.errors && f.submitted">
-            <div *ngIf="password.errors.required">Een wachtwoord is vereist</div>
-            <div *ngIf="password.errors.minlength">
+            <div *ngIf="['required']">Een wachtwoord is vereist</div>
+            <div *ngIf="['minlength']">
               Wachtwoord moet minimaal 6 characters zijn.
             </div>
           </div>

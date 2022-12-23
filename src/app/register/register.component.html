@@ -25,11 +25,11 @@
                  minlength="3"
                  maxlength="30">
           <div class="text-red-400 p-2" *ngIf="name.errors && f.submitted">
-            <div *ngIf="name.errors.required">Een gebruikersnaam is vereist</div>
-            <div *ngIf="name.errors.minlength">
+            <div *ngIf="['required']">Een gebruikersnaam is vereist</div>
+            <div *ngIf="['minlength']">
               Gebruikersnaam moet minimaal 3 characters zijn
             </div>
-            <div *ngIf="name.errors.maxlength">
+            <div *ngIf="['maxlength']">
               Gebruikersnaam mag maximaal 30 characters zijn
             </div>
           </div>
@@ -73,8 +73,8 @@
           <div
             class="text-red-400 p-2"
             *ngIf="password.errors && f.submitted">
-            <div *ngIf="password.errors.required">Een wachtwoord is vereist</div>
-            <div *ngIf="password.errors.minlength">
+            <div *ngIf="['required']">Een wachtwoord is vereist</div>
+            <div *ngIf="['minlength']">
               Wachtwoord moet minimaal 6 characters zijn.
             </div>
           </div>
