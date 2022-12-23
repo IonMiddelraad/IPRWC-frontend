@@ -19,7 +19,7 @@ export class EncryptionService {
         return encrypted.toString();
     }
 
-    decrypt(value){
+    decrypt(value: string){
         const keyBase64 = this.secretKey;
         const key = CryptoJS.enc.Base64.parse(keyBase64);
         const decrypt = CryptoJS.AES.decrypt(value, key, {mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});

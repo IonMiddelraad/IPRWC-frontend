@@ -102,5 +102,7 @@
       }
     }
   },
-  "defaultProject": "iprwc-frontend"
+  "cli": {
+    "analytics": false
+  }
 }

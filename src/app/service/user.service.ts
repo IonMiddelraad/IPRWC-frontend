@@ -9,9 +9,8 @@ const API_PATH = 'http://localhost:8080/api/user';
     providedIn: 'root'
 })
 export class UserService{
-
-    username: string;
-    email: string;
+  username: string | undefined;
+  email: string | undefined;
 
     constructor(private http: HttpClient, private permissionHelper: PermissionHelper) {
     }
