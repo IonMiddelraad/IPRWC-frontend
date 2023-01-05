@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LogoComponent } from './logo/logo.component';
 import {authInterceptorProviders} from "./helpers/auth.interceptor";
+import {ContentComponent} from "./content/content.component";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {authInterceptorProviders} from "./helpers/auth.interceptor";
     DashboardComponent,
     HeaderComponent,
     FooterComponent,
-    LogoComponent
+    LogoComponent,
+    ContentComponent
   ],
     imports: [
         BrowserModule,
