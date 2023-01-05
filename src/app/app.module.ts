@@ -7,12 +7,21 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {FormsModule} from "@angular/forms";
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { LogoComponent } from './logo/logo.component';
+import {authInterceptorProviders} from "./helpers/auth.interceptor";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent,
+    HeaderComponent,
+    FooterComponent,
+    LogoComponent
   ],
     imports: [
         BrowserModule,
@@ -20,7 +29,7 @@ import {FormsModule} from "@angular/forms";
         FormsModule,
       HttpClientModule
     ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

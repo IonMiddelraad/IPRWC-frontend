@@ -1,11 +1,11 @@
 import {Role} from "./role";
 
-export class Employee {
+export class User {
     private _id: number;
     private _name: string;
     private _email: string;
     private _password: string;
-    private _roles: Role[];
+    private _roles: Role[] = [];
 
     constructor(id: number, name: string, email: string, password: string) {
         this._id = id;

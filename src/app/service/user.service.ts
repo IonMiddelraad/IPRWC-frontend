@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {PermissionHelper} from "../helpers/permission.helper";
-import {Employee} from "../model/employee";
+import {User} from "../model/user";
 
 const API_PATH = 'http://localhost:8080/api/user';
 
@@ -23,7 +23,7 @@ export class UserService{
         return this.http.delete(API_PATH + '/' + user_id);
     }
 
-    filterDisabledEmployees(employees: Employee[]) {
+    filterDisabledEmployees(employees: User[]) {
         employees.forEach(employee => {
             const permissions = this.permissionHelper.rolesToPermissionsList(employee.roles);
             if(this.permissionHelper.hasPermission(permissions, 'NONE')) {
