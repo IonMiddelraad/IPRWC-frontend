@@ -23,14 +23,6 @@ export class HeaderComponent {
       path: '/dashboard'
     },
     {
-      display: 'Reservation',
-      path: '/reservation'
-    },
-    {
-      display: 'Agenda',
-      path: '/calendar'
-    },
-    {
       display: 'Rooms',
       path: '/rooms'
     }
