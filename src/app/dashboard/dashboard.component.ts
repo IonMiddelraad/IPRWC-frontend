@@ -11,7 +11,7 @@ export class DashboardComponent implements OnInit {
 
   isLoggedIn = false;
   email?: string;
-  currentUser =  { username: 'Not logged in', email: ''};
+  currentUser =  { username: 'Guest', email: ''};
 
   constructor(private tokenStorageService: TokenStorageService, private authService: AuthService, private router: Router) {}
 
@@ -30,8 +30,5 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  loadReservation(): void {
-    this.router.navigate(['reservation'])
-  }
 
 }

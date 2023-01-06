@@ -1,7 +1,6 @@
-<header *ngIf="isLoggedIn" class="flex w-full bg-black">
+<header class="flex w-full bg-gray-800">
   <!-- Desktop navigation -->
   <section class="hidden md:flex mx-auto py-4 px-4 container">
-    <app-logo class="h-8 shrink-0"></app-logo>
 
     <nav class="flex flex-wrap flex-grow justify-end my-auto">
       <a
@@ -14,7 +13,7 @@
     <section class="shrink-0 pl-4 my-auto text-white transition cursor-pointer hover:text-secondary dropdown dropdown-end">
       <label tabindex="0" class="m-1" [textContent]="currentUser.username"></label>
       <i class="fa-solid fa-caret-down ml-2 mt-1"></i>
-      <ul tabindex="0" class="dropdown-content menu p-2 hover: text-white shadow rounded-md bg-gray-800 w-52">
+      <ul *ngIf="isLoggedIn" tabindex="0" class="dropdown-content menu p-2 hover: text-white shadow rounded-md bg-gray-800 w-52">
         <li><a class="hover:text-white break-all">{{ currentUser.email }}</a></li>
         <li><a class="hover:text-white" (click)="logout()">Logout</a></li>
       </ul>

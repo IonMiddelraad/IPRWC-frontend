@@ -12,19 +12,19 @@ import {PermissionHelper} from "../helpers/permission.helper";
 export class HeaderComponent {
   isLoggedIn = false;
   email?: string;
-  currentUser =  { username:'Not logged in', email: ''};
+  currentUser =  { username:'Guest', email: ''};
   isAdmin = false;
 
   constructor(private tokenStorageService: TokenStorageService, private authService: AuthService, private permissionHelper: PermissionHelper) {}
 
   navItems = [
     {
-      display: 'Dashboard',
+      display: 'Products',
       path: '/dashboard'
     },
     {
-      display: 'Rooms',
-      path: '/rooms'
+      display: 'Login',
+      path: '/login'
     }
   ];
 
