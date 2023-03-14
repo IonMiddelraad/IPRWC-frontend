@@ -13,6 +13,9 @@ import { FooterComponent } from './footer/footer.component';
 import { LogoComponent } from './logo/logo.component';
 import {authInterceptorProviders} from "./helpers/auth.interceptor";
 import {ContentComponent} from "./content/content.component";
+import {AdminComponent} from "./admin/admin.component";
+import {CartComponent} from "./cart/cart.component";
+import {OrderComponent} from "./order/order.component";
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import {ContentComponent} from "./content/content.component";
     HeaderComponent,
     FooterComponent,
     LogoComponent,
-    ContentComponent
+    ContentComponent,
+    AdminComponent,
+    CartComponent,
+    OrderComponent
   ],
     imports: [
         BrowserModule,

@@ -23,8 +23,12 @@ export class HeaderComponent {
       path: '/dashboard'
     },
     {
-      display: 'Orders',
-      path: '/orders'
+      display: 'Order',
+      path: '/order'
+    },
+    {
+      display: 'Cart',
+      path: '/cart'
     }
   ];
 
@@ -51,7 +55,7 @@ export class HeaderComponent {
 
           if(this.isAdmin){
             this.navItems.push({
-              display: 'Admin',
+              display: 'admin',
               path: '/admin'
             });
           }
