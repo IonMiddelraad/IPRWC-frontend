@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {TokenStorageService} from "../service/token.service";
 import {AuthService} from "../service/auth.service";
 import {Router} from "@angular/router";
+import {ProductService} from "../service/product.service";
+import {Product} from "../model/product";
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +15,14 @@ export class DashboardComponent implements OnInit {
   email?: string;
   currentUser =  { username: 'Guest', email: ''};
 
-  constructor(private tokenStorageService: TokenStorageService, private authService: AuthService, private router: Router) {}
+  productList: Product[];
+
+  constructor(
+    private tokenStorageService: TokenStorageService,
+    private authService: AuthService,
+    private router: Router,
+    private productService: ProductService
+  ) {}
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
@@ -28,6 +37,19 @@ export class DashboardComponent implements OnInit {
           console.log("Failed to get user data " + err)
         });
     }
+    this.loadAllProducts();
+  }
+
+  loadAllProducts() {
+    this.productService.loadProducts().subscribe(
+      data => {
+        console.log(data)
+        this.productList = data['payload'];
+        console.log(this.productList)
+      }, error => {
+        console.log("Something went wrong! " + error)
+      }
+    )
   }
 
 

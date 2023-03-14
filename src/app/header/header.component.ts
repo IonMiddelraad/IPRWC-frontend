@@ -23,8 +23,8 @@ export class HeaderComponent {
       path: '/dashboard'
     },
     {
-      display: 'Login',
-      path: '/login'
+      display: 'Orders',
+      path: '/orders'
     }
   ];
 
@@ -57,6 +57,11 @@ export class HeaderComponent {
           }
         }
       )
+    } else {
+      this.navItems.push({
+        display: 'Login',
+        path: '/login'
+      });
     }
 
 
