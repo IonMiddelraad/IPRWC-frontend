@@ -19,15 +19,15 @@ export class HeaderComponent {
 
   navItems = [
     {
-      display: 'Products',
+      display: 'Producten',
       path: '/dashboard'
     },
     {
-      display: 'Order',
+      display: 'Recente Orders',
       path: '/order'
     },
     {
-      display: 'Cart',
+      display: 'Winkelwagen',
       path: '/cart'
     }
   ];

@@ -43,9 +43,7 @@ export class DashboardComponent implements OnInit {
   loadAllProducts() {
     this.productService.loadProducts().subscribe(
       data => {
-        console.log(data)
         this.productList = data['payload'];
-        console.log(this.productList)
       }, error => {
         console.log("Something went wrong! " + error)
       }
