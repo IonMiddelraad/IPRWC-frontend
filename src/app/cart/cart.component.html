@@ -1,0 +1,31 @@
+<app-content>
+  <h1 class="text-black font-bold text-3xl ml-5">Winkelwagen</h1>
+  <div class="row">
+    <div class="col-12 " *ngFor="let item of items; let i = index ">
+      <div class="card bg-base-100 shadow-xl m-5">
+      <div class="card-body">
+      <div class="row" id="{{ item.id}}">
+        <div class="col-6">
+          <h2 class="font-bold text-xl card-title">{{ item.name }}</h2>
+          <p class="">{{ item.description }}</p>
+        </div>
+
+        <div class="col-1 pl-0">
+          <button class="btn btn-secondary" (click)="removeFromCart(item)"> x</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-12 ">
+      <hr />
+      <div class="text-black">
+        Totaal:
+        <span class="font-weight-bold  ">€ {{total}}</span><hr>
+        <button class="btn btn-warning m-5" (click)="clearCart(items)"> Reset winkelwagen</button>
+        <button *ngIf="items.length" class="btn btn-success m-5" (click)="sendOrder(items)"> Stuur bestelling</button>
+      </div>
+    </div>
+  </div>
+</app-content>

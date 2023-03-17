@@ -4,6 +4,7 @@ import {AuthService} from "../service/auth.service";
 import {Router} from "@angular/router";
 import {ProductService} from "../service/product.service";
 import {Product} from "../model/product";
+import {CartService} from "../service/cart.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -21,7 +22,8 @@ export class DashboardComponent implements OnInit {
     private tokenStorageService: TokenStorageService,
     private authService: AuthService,
     private router: Router,
-    private productService: ProductService
+    private productService: ProductService,
+    public cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -48,6 +50,11 @@ export class DashboardComponent implements OnInit {
         console.log("Something went wrong! " + error)
       }
     )
+  }
+
+  //----- add item to cart
+  addToCart(item: Product) {
+      this.cartService.addToCart(item);
   }
 
 
