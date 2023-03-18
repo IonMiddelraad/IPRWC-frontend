@@ -1,0 +1,23 @@
+<app-content>
+<section class="flex flex-col md:flex-row w-full mb-16">
+  <div class="flex-grow shrink-0 w-full md:w-3/5">
+
+<div class="flex flex-row flex-wrap ">
+  <div class="w-full md:w-1/3 flex m-5" *ngFor="let order of orderList">
+
+    <div class="card w-96 bg-base-100 shadow-xl ">
+      <div class="card-body">
+        <h2 class="card-title">Order ID: {{order.id}}</h2>
+        <hr>
+        <p>Ordered by: {{order.user.name}}</p>
+          <div *ngFor="let product of order.productList">
+            <p>Ordered product: {{product.name}}</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+</app-content>

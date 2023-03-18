@@ -1,0 +1,24 @@
+<app-content>
+  <section class="flex flex-col md:flex-row w-full mb-16">
+    <div class="flex-grow shrink-0 w-full md:w-3/5">
+
+
+      <div class="flex flex-row flex-wrap ">
+      <div class="w-full md:w-1/4 flex m-5" *ngFor="let product of productList">
+          <div class="card w-96 bg-base-100 shadow-xl ">
+            <figure class=""><img src="{{product.image}}" alt="Socks" /></figure>
+            <div class="card-body">
+              <h2 class="card-title ">{{product.name}}</h2>
+              <p>{{product.description}}</p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary hover:bg-gray-600" (click)="addToCart(product)">€{{product.price}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+  </section>
+
+
+</app-content>
