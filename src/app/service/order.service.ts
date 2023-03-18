@@ -24,5 +24,9 @@ export class OrderService {
     return this.http.post(API_PATH + "/new", {productList})
   }
 
+  deleteOrder(orderId: number) {
+    return this.http.delete(API_PATH + "/" + orderId, {});
+  }
+
 
 }

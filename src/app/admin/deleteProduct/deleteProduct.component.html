@@ -1,0 +1,14 @@
+<div class="flex flex-row flex-wrap ">
+  <div class="w-full md:w-1/4 flex m-5" *ngFor="let product of productList">
+    <div class="card w-96 bg-base-100 shadow-xl ">
+      <figure class=""><img src="{{product.image}}" alt="Socks" /></figure>
+      <div class="card-body">
+        <h2 class="card-title ">{{product.name}}</h2>
+        <p>{{product.description}}</p>
+        <div class="card-actions justify-end">
+          <button class="btn btn-warning" (click)="deleteProduct(product)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

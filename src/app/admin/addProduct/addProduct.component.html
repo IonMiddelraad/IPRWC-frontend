@@ -1,0 +1,56 @@
+<h1 class="text-4xl text-black py-3 text-center md:text-left">Nieuw Product</h1>
+<hr>
+<div class="container">
+  <div class="row">
+
+  </div>
+  <form class="text-black text-left flex-col flex flex-nowrap" #f="ngForm">
+    <label class="text-2xl text-black py-3" for="name">Name</label>
+    <input
+      type="text"
+      id="name"
+      class="form-control mt-1 mb-5 w-52 flex-row text-lg px-6 max-w-full rounded-md"
+      [(ngModel)]="productDetails.name"
+      name="name"
+      required>
+    <label class="text-2xl text-black py-3" for="description">Description</label>
+    <input
+      type="text"
+      id="description"
+      class="form-control mt-1 mb-5 w-52 flex-row text-lg px-6 max-w-full rounded-md"
+      [(ngModel)]="productDetails.description"
+      name="description"
+      required>
+    <label class="text-2xl text-black py-3" for="price">Price</label>
+    <input
+      type="text"
+      id="price"
+      class="form-control mt-1 mb-5 w-52 flex-row text-lg px-6 max-w-full rounded-md"
+      [(ngModel)]="productDetails.price"
+      name="price"
+      required>
+    <label class="text-2xl text-black py-3" for="image">Image Link</label>
+    <input
+      type="text"
+      id="image"
+      class="form-control mt-1 mb-5 w-52 flex-row text-lg px-6 max-w-full rounded-md"
+      [(ngModel)]="productDetails.image"
+      name="image"
+      required>
+  </form>
+  <ng-container *ngIf="productDetails.name != null && productDetails.description != null && productDetails.price != null && productDetails.image != null; then validEntry; else invalidEntry"></ng-container>
+  <ng-template #invalidEntry>
+    <button
+      class="bg-red-500 text-white font-bold py-2 px-4 border-b-4 border-red-700 rounded mt-5 w-32 max-w-full"
+      type="submit"
+      [disabled]="true">Submit
+    </button>
+  </ng-template>
+  <ng-template #validEntry>
+    <button
+      class="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded mt-5 w-32 max-w-full"
+      (click)="submitNewProduct()"
+      type="submit">Submit
+    </button>
+  </ng-template>
+</div>

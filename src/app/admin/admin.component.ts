@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {TokenStorageService} from "../service/token.service";
 import {AuthService} from "../service/auth.service";
 import {Router} from "@angular/router";
-import {ProductService} from "../service/product.service";
-import {Product} from "../model/product";
-import {data} from "autoprefixer";
 import {PermissionHelper} from "../helpers/permission.helper";
 
 @Component({
@@ -12,6 +9,10 @@ import {PermissionHelper} from "../helpers/permission.helper";
   templateUrl: './admin.component.html'
 })
 export class AdminComponent implements OnInit {
+
+  adminOptions = ["Delete order", "Delete product", "Add product"];
+  currentPage: string = "Admin menu"
+
 
   constructor(
     private tokenStorageService: TokenStorageService,
@@ -23,6 +24,26 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
     this.checkRole();
   }
+
+  loadSelectedOption(option: string) {
+    switch (option) {
+      case 'Delete order':
+        this.currentPage = "Delete order";
+        break;
+      case 'Delete product':
+        this.currentPage = "Delete product";
+        break;
+      case 'Add product':
+        this.currentPage = "Add product";
+        break;
+      case 'Admin menu':
+        this.currentPage = "Admin menu";
+        break;
+      default:
+        console.log('Option ' + option + 'is not a possible admin option');
+    }
+  }
+
 
   checkRole() {
     this.authService.getUserDetails().subscribe(

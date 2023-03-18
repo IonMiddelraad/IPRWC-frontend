@@ -55,7 +55,7 @@ export class HeaderComponent {
 
           if(this.isAdmin){
             this.navItems.push({
-              display: 'admin',
+              display: 'Admin',
               path: '/admin'
             });
           }

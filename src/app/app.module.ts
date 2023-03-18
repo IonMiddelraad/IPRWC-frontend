@@ -16,6 +16,9 @@ import {ContentComponent} from "./content/content.component";
 import {AdminComponent} from "./admin/admin.component";
 import {CartComponent} from "./cart/cart.component";
 import {OrderComponent} from "./order/order.component";
+import {DeleteOrderComponent} from "./admin/deleteOrder/deleteOrder.component";
+import {DeleteProductComponent} from "./admin/deleteProduct/deleteProduct.component";
+import {AddProductComponent} from "./admin/addProduct/addProduct.component";
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import {OrderComponent} from "./order/order.component";
     ContentComponent,
     AdminComponent,
     CartComponent,
-    OrderComponent
+    OrderComponent,
+    DeleteOrderComponent,
+    DeleteProductComponent,
+    AddProductComponent
   ],
     imports: [
         BrowserModule,
