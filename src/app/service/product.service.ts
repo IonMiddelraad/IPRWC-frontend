@@ -20,7 +20,6 @@ export class ProductService {
   }
 
   addProduct(name: string, description: string, price: number, image: string) {
-    console.log("product send: ")
     return this.http.post(API_PATH + "/new", {name, description, price, image})
   }
 
