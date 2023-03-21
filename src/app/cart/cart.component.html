@@ -24,7 +24,8 @@
         Totaal:
         <span class="font-weight-bold  ">€ {{total}}</span><hr>
         <button class="btn btn-warning m-5" (click)="clearCart(items)"> Reset winkelwagen</button>
-        <button *ngIf="items.length" class="btn btn-success m-5" (click)="sendOrder(items)"> Stuur bestelling</button>
+        <button *ngIf="items.length && isLoggedIn" class="btn btn-success m-5" (click)="sendOrder(items)"> Stuur bestelling</button>
+        <h2 class="text-red-500 font-bold" *ngIf="!isLoggedIn">Je moet ingelogd zijn om een bestelling te kunnen plaatsen!</h2>
       </div>
     </div>
   </div>

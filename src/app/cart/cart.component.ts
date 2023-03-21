@@ -22,11 +22,13 @@ export class CartComponent implements OnInit {
     ElementRef
     >;
   items: Product[] = [];
+  isLoggedIn: boolean = false;
 
   constructor(
     public cartService: CartService,
     private orderService: OrderService,
-    private authService: AuthService
+    private authService: AuthService,
+    private tokenStorageService: TokenStorageService
   ) { }
 
 
@@ -66,5 +68,6 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.loadCart();
     this.items = this.cartService.getItems();
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
   }
 }

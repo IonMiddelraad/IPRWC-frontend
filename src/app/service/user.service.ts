@@ -2,8 +2,9 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {PermissionHelper} from "../helpers/permission.helper";
 import {User} from "../model/user";
+import {environment} from "../../environments/environment.prod";
 
-const API_PATH = 'http://localhost:8080/api/user';
+const API_PATH = environment.apiUrl + '/api/user';
 
 @Injectable({
     providedIn: 'root'

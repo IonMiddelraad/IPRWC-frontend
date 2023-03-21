@@ -1,9 +1,10 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Product} from "../model/product";
+import {environment} from "../../environments/environment.prod";
 
 
-const API_PATH = 'http://localhost:8080/api/user/product';
+const API_PATH = environment.apiUrl + '/api/user/product';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class ProductService {
   }
 
   loadProducts() {
-    return this.http.get(API_PATH + "/all", {params: {order: 'asc'}})
+    return this.http.get(environment.apiUrlAuth + "/product/all", {params: {order: 'asc'}})
   }
 
   addProduct(name: string, description: string, price: number, image: string) {

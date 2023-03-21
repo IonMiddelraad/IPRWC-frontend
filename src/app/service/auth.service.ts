@@ -3,8 +3,10 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {hashSync} from "bcryptjs";
 import {EncryptionService} from "./auth.encryption.service";
+import {environment} from "../../environments/environment.prod";
 
-const AUTH_API = 'http://localhost:8080/api/auth';
+const AUTH_API = environment.apiUrlAuth;
+const API = environment.apiUrl
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -39,6 +41,6 @@ export class AuthService {
     }
 
     getUserDetails(): Observable<any> {
-        return this.http.get("http://localhost:8080/api" + '/user/info', {});
+        return this.http.get(API + '/api/user/info', {});
     }
 }
